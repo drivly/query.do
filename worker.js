@@ -3,7 +3,9 @@ import qs from 'qs'
 export default {
   fetch: async (req, env) => {
     
-    const { user } = await env.CTX.fetch(req).then(res => res.json())
+    const { user, redirect } = await env.CTX.fetch(req).then(res => res.json())
+    if (redirect) return Response.redirect(redirect)
+    
     const { origin, pathname, search } = new URL(req.url)
     
     const data = pathname === '/parse' ? undefined : await fetch('https:/' + pathname).then(res => res.json())
