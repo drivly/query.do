@@ -21,7 +21,7 @@ export default {
           parse: origin + '/parse?prop=value',
           generate: origin + '/:url',
         },
-        memberOf: 'https://utilities.do',
+        type: 'https://utilities.do',
         repo: 'https://github.com/drivly/query.do',
       },
       query: qs.parse(search, { ignoreQueryPrefix: true }),
