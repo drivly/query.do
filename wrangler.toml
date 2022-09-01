@@ -1,6 +1,6 @@
 name = "perf-do"
 account_id = "b6641681fe423910342b9ffa1364c76d"
-route = { pattern = "*/*", zone_id = "" }
+route = { pattern = "*/*", zone_id = "cf8cede7e5594ed00c8faedbd55d7669" }
 main = "worker.js"
 usage_model = "unbound"
 compatibility_date = "2022-08-23"
