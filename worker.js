@@ -18,7 +18,7 @@ export default {
         },
         memberOf: 'https://primitives.do',
       },
-      query: qs.parse(search),
+      query: qs.parse(search, { ignoreQueryPrefix: true }),
       user,
     }, null, 2), { headers: { 'content-type': 'application/json; charset=utf-8' }})
   }
