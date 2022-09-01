@@ -6,7 +6,7 @@ export default {
     const { user } = await env.CTX.fetch(req).then(res => res.json())
     const { origin, pathname, search } = new URL(req.url)
     
-    const data = pathname === '/parse') ? undefined : await fetch('https:/' + pathname).then(res => res.json())
+    const data = pathname === '/parse' ? undefined : await fetch('https:/' + pathname).then(res => res.json())
  
     return new Response(JSON.stringify({
       api: {
