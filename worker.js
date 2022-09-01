@@ -8,7 +8,7 @@ export default {
  
     return new Response(JSON.stringify({
       api: {
-        icon: '',
+        icon: '🔎',
         name: 'query.do',
         description: 'Query String Parsing & Generation API',
         url: 'https://query.do',
