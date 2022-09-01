@@ -1,3 +1,5 @@
+import qs from 'qs'
+
 export default {
   fetch: async (req, env) => {
     
@@ -16,9 +18,7 @@ export default {
         },
         memberOf: 'https://primitives.do',
       },
-      query: {
-
-      },
+      query: qs.parse(search),
       user,
     }, null, 2), { headers: { 'content-type': 'application/json; charset=utf-8' }})
   }
