@@ -1,4 +1,4 @@
-name = "perf-do"
+name = "query-do"
 account_id = "b6641681fe423910342b9ffa1364c76d"
 route = { pattern = "*/*", zone_id = "cf8cede7e5594ed00c8faedbd55d7669" }
 main = "worker.js"
