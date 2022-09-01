@@ -7,6 +7,7 @@ export default {
     if (redirect) return Response.redirect(redirect)
     
     const { origin, pathname, search } = new URL(req.url)
+    const body = await req.json()
     
     const data = (pathname === '/parse' || pathname === '/api') ? undefined : await fetch('https:/' + (pathname === '/:url' ? '/json.fyi/people.json' : pathname)).then(res => res.json())
  
@@ -25,7 +26,7 @@ export default {
         repo: 'https://github.com/drivly/query.do',
       },
       query: qs.parse(search, { ignoreQueryPrefix: true }),
-      data: origin + '/parse' + qs.stringify(data, { encode: false, addQueryPrefix: true, format: 'RFC1738' }),
+      data: origin + '/parse' + qs.stringify(data ?? body, { encode: false, addQueryPrefix: true, format: 'RFC1738' }),
       user,
     }, null, 2), { headers: { 'content-type': 'application/json; charset=utf-8' }})
   }
