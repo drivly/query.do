@@ -7,7 +7,7 @@ export default {
     if (redirect) return Response.redirect(redirect)
     
     const { origin, pathname, search } = new URL(req.url)
-    const body = await req.json()
+    const body = req.body ? await req.json() : undefined
     
     const data = (pathname === '/parse' || pathname === '/api') ? undefined : await fetch('https:/' + (pathname === '/:url' ? '/json.fyi/people.json' : pathname)).then(res => res.json())
  
