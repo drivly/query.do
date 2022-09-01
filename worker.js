@@ -25,7 +25,7 @@ export default {
         repo: 'https://github.com/drivly/query.do',
       },
       query: qs.parse(search, { ignoreQueryPrefix: true }),
-      data: origin + '/parse' + qs.stringify(data, { encode: false, addQueryPrefix: true, allowDots: true }),
+      data: origin + '/parse' + qs.stringify(data, { encode: false, addQueryPrefix: true, format: 'RFC1738' }),
       user,
     }, null, 2), { headers: { 'content-type': 'application/json; charset=utf-8' }})
   }
