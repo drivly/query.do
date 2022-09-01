@@ -23,7 +23,7 @@ export default {
         memberOf: 'https://primitives.do',
       },
       query: qs.parse(search, { ignoreQueryPrefix: true }),
-      data: origin + '/parse?' + qs.stringify(data, { encode: false, format: 'RFC1738', allowDots: true }),
+      data: origin + '/parse' + qs.stringify(data, { encode: false, addQueryPrefix: true, allowDots: true }),
       user,
     }, null, 2), { headers: { 'content-type': 'application/json; charset=utf-8' }})
   }
