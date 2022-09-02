@@ -24,8 +24,8 @@ export default {
         type: 'https://utilities.do',
         repo: 'https://github.com/drivly/query.do',
       },
-      decoded: qs.parse(search, { ignoreQueryPrefix: true }),
       encoded: origin + '/parse' + (search === "" ? qs.stringify(data ?? body, { encode: false, addQueryPrefix: true, format: 'RFC1738' }) : decodeURI(search)),
+      decoded: data ?? body ?? qs.parse(search, { ignoreQueryPrefix: true }),
       user,
     }, null, 2), { headers: { 'content-type': 'application/json; charset=utf-8' }})
   }
