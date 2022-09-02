@@ -26,6 +26,7 @@ export default {
       },
       query: qs.parse(search, { ignoreQueryPrefix: true }),
       data: origin + '/parse' + qs.stringify(data ?? body, { encode: false, addQueryPrefix: true, format: 'RFC1738' }),
+      search,
       user,
     }, null, 2), { headers: { 'content-type': 'application/json; charset=utf-8' }})
   }
